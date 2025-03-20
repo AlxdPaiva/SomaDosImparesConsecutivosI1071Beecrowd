@@ -16,28 +16,29 @@ public class SomaDosImparesConsecutivosI1071Beecrowd {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner teclado = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         
-        int X = teclado.nextInt();
-        int Y = teclado.nextInt();
-        int maior = 0;
-        int menor = 0;
-        int somaimpar = 0;
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        scanner.close();
         
-        if (X > Y) {
-            maior = X;
-            menor = Y;
-        } else {
-            maior = Y;
-            menor = X;
+        int soma = 0;
+        
+        // Garante que x seja o menor e y o maior
+        if (x > y) {
+            int temp = x;
+            x = y;
+            y = temp;
         }
         
-        for (int c = menor; c <= maior; c++) {
-            if (c % 2 == 1) {
-                somaimpar += c;
+        // Soma os números ímpares entre x e y
+        for (int i = x + 1; i < y; i++) {
+            if (i % 2 != 0) {
+                soma += i;
             }
         }
-        System.out.println(somaimpar);
+        
+        System.out.println(soma);
     }
     
 }
